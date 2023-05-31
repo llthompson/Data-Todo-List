@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&family=Montserrat:wght@100;300;400;500;600;700&family=Mulish:wght@300;400;700&family=Pacifico&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300&family=Quicksand:wght@300;400;500;600;700&family=Raleway:wght@100;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>ToDo List</title>
 </head>
+
 <body>
 
-    <button onclick="logFetchTodos()">Fetch Todos</button>
-<button onclick="logTodos()">Log Todos</button>
-<button onclick="populateTodos()">Populate Todos</button>
-<ol id="todo-list">
-<!-- LIs will go here -->
-</ol>
+    <section class="buttons">
+        <button onclick="logFetchTodos()">Fetch Todos</button>
+        <button onclick="logTodos()">Log Todos</button>
+        <button onclick="populateTodos()">Populate Todos</button>
+    </section>
 
-<script src="scripts.js"></script>    
+    <section class="the-list">
+        <ol id="todo-list">
+            <!-- LIs will go here -->
+        </ol>
+    </section>
+
+
+
+    <script src="scripts.js"></script>
 </body>
-</html>
 
+</html>
