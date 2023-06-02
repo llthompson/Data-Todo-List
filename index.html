@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -16,17 +17,43 @@
 
 <body>
 
-    <section class="buttons">
-        <button onclick="logFetchTodos()">Fetch Todos</button>
-        <button onclick="logTodos()">Log Todos</button>
-        <button onclick="populateTodos()">Populate Todos</button>
+    <section class="user-action">
+
+        <section class="fetching">
+            <button id="fetch-btn" onclick="logFetchTodos()">Fetch Todos</button>
+            <button id="log-btn" onclick="logTodos()">Log Todos</button>
+        </section>
+        <section class="poppin">
+            <button id="populate-btn" onclick="populateTodos()">Populate Todos</button>
+        </section>
+
+
+        <section class="filtering">
+
+            <button id="filter-btn" onclick="filterTodos()">Filter Todos</button>
+
+
+            <input type="number" id="user-id-input" min="1" max="10" placeholder="Enter UserID (1-10)">
+        </section>
+        <section class="yesno">
+            <button id="completed-todos-btn" onclick="showCompletedTodos()" style="display: none;">Show
+                Completed</button>
+            <button id="not-completed-todos-btn" onclick="showNotCompletedTodos()" style="display: none;">Show Not
+                Completed</button>
+        </section>
+
+
     </section>
+
+
 
     <section class="the-list">
         <ol id="todo-list">
             <!-- LIs will go here -->
         </ol>
     </section>
+
+
 
 
 
