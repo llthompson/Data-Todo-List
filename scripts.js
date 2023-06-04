@@ -56,8 +56,8 @@ const filterTodos = () => {
     });
     const completedBtn = document.getElementById('completed-todos-btn');
     const notCompletedBtn = document.getElementById('not-completed-todos-btn');
-    completedBtn.style.display = filteredTodos.length > 0 ? 'block' : 'none';
-    notCompletedBtn.style.display = filteredTodos.length > 0 ? 'block' : 'none';
+    completedBtn.style.display = filteredTodos.length > 0 ? 'inline' : 'none';
+    notCompletedBtn.style.display = filteredTodos.length > 0 ? 'inline' : 'none';
 }
 
 
