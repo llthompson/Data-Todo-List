@@ -17,6 +17,17 @@ body {
   box-shadow: 10px 10px 20px #00000033;
 }
 
+#populate-btn {
+  font-size: 24px;
+}
+
+
+#populate-btn:hover{
+  border: 2px solid #888;
+  background-color: #ddd;
+  font-size: 22px;
+}
+
 #fetch-btn,
 #filter-btn {
   margin-right: 15%;
@@ -31,7 +42,7 @@ body {
   width: 13.812%;
   font-size: 23px;
   border-style: solid;
-  border-radius: 5%;
+  border-radius: 5px;
 }
 
 #completed-todos-btn, #not-completed-todos-btn {
@@ -45,7 +56,7 @@ button {
   font-size: 18px;
   color: #b50965;
   border-style: solid;
-  border-radius: 5%;
+  border-radius: 5px;
   background-color: white;
   /* box-shadow: 10px 10px 20px #00000033; */
   width: 15%;
