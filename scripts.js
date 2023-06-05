@@ -61,7 +61,16 @@ const filterTodos = () => {
     filteredTodos = arrayOfTodos.filter(todo => todo.userId === userID);
     filteredTodos.forEach(todo => {
         const li = document.createElement('li');
-        li.textContent = todo.title;
+
+        const statusElement = document.createElement('span');
+        statusElement.classList.add(todo.completed ? 'checkmark' : 'x-mark');
+        statusElement.textContent = todo.completed ? '\u2714' : '\u2716';
+
+        const todoTextElement = document.createElement('span');
+        todoTextElement.textContent = todo.title;
+
+        li.appendChild(statusElement);
+        li.appendChild(todoTextElement);
         todoList.appendChild(li);
     });
     const completedBtn = document.getElementById('completed-todos-btn');
@@ -77,7 +86,16 @@ const showCompletedTodos = () => {
     const completedTodos = filteredTodos.filter(todo => todo.completed);
     completedTodos.forEach(todo => {
         const li = document.createElement('li');
-        li.textContent = todo.title;
+
+        const statusElement = document.createElement('span');
+        statusElement.classList.add(todo.completed ? 'checkmark' : 'x-mark');
+        statusElement.textContent = todo.completed ? '\u2714' : '\u2716';
+
+        const todoTextElement = document.createElement('span');
+        todoTextElement.textContent = todo.title;
+
+        li.appendChild(statusElement);
+        li.appendChild(todoTextElement);
         todoList.appendChild(li);
     });
 }
@@ -88,7 +106,18 @@ const showNotCompletedTodos = () => {
     const notCompletedTodos = filteredTodos.filter(todo => !todo.completed);
     notCompletedTodos.forEach(todo => {
         const li = document.createElement('li');
-        li.textContent = todo.title;
+
+        const statusElement = document.createElement('span');
+        statusElement.classList.add(todo.completed ? 'checkmark' : 'x-mark');
+        statusElement.textContent = todo.completed ? '\u2714' : '\u2716';
+
+        const todoTextElement = document.createElement('span');
+        todoTextElement.textContent = todo.title;
+
+        li.appendChild(statusElement);
+        li.appendChild(todoTextElement);
+
+        // li.textContent = todo.title;
         todoList.appendChild(li);
     });
 }
