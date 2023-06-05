@@ -14,21 +14,18 @@ const logTodos = () => {
     console.log(arrayOfTodos)
 }
 
-
-
-
 const populateTodos = () => {
     fetchTodos()
         .then(res => res.json())
         .then(todos => {
             console.log('assigning to array')
-            arrayOfTodos = todos; // Store todos in the arrayOfTodos variable
+            arrayOfTodos = todos;
             console.log(JSON.stringify(arrayOfTodos))
             const todoList = document.getElementById('todo-list');
             todoList.innerHTML = '';
+
             arrayOfTodos.forEach(todo => {
                 const li = document.createElement('li');
-                // li.textContent = todo.title;
 
                 const statusElement = document.createElement('span');
                 statusElement.classList.add(todo.completed ? 'checkmark' : 'x-mark');
@@ -41,12 +38,10 @@ const populateTodos = () => {
                 li.appendChild(todoTextElement);
                 todoList.appendChild(li);
             });
-
             const completedBtn = document.getElementById('completed-todos-btn');
             const notCompletedBtn = document.getElementById('not-completed-todos-btn');
             document.getElementById('completed-todos-btn').style.display = 'inline';
             document.getElementById('not-completed-todos-btn').style.display = 'inline';
-
         });
 
 
@@ -58,7 +53,6 @@ const getUserID = () => {
 }
 
 let filteredTodos = [];
-// filteredTodos = todos.filter(todo => todo.userId === getUserID());
 
 const filterTodos = () => {
     const userID = getUserID()
@@ -79,17 +73,21 @@ const filterTodos = () => {
         li.appendChild(todoTextElement);
         todoList.appendChild(li);
     });
-    // const completedBtn = document.getElementById('completed-todos-btn');
-    // const notCompletedBtn = document.getElementById('not-completed-todos-btn');
-    // completedBtn.style.display = filteredTodos.length > 0 ? 'inline' : 'none';
-    // notCompletedBtn.style.display = filteredTodos.length > 0 ? 'inline' : 'none';
 }
 
 
 const showCompletedTodos = () => {
     const todoList = document.getElementById('todo-list');
     todoList.innerHTML = '';
-    const completedTodos = filteredTodos.filter(todo => todo.completed);
+    let completedTodos
+
+
+    if (filteredTodos > 0) {
+        completedTodos = filteredTodos.filter(todo => todo.completed);
+    } else {
+        completedTodos = arrayOfTodos.filter(todo => todo.completed);
+    }
+
     completedTodos.forEach(todo => {
         const li = document.createElement('li');
 
@@ -109,7 +107,15 @@ const showCompletedTodos = () => {
 const showNotCompletedTodos = () => {
     const todoList = document.getElementById('todo-list');
     todoList.innerHTML = '';
-    const notCompletedTodos = filteredTodos.filter(todo => !todo.completed);
+    let notCompletedTodos
+
+
+    if (filteredTodos > 0) {
+        notCompletedTodos = filteredTodos.filter(todo => !todo.completed);
+    } else {
+        notCompletedTodos = arrayOfTodos.filter(todo => !todo.completed);
+    }
+
     notCompletedTodos.forEach(todo => {
         const li = document.createElement('li');
 
@@ -122,8 +128,6 @@ const showNotCompletedTodos = () => {
 
         li.appendChild(statusElement);
         li.appendChild(todoTextElement);
-
-        // li.textContent = todo.title;
         todoList.appendChild(li);
     });
 }
