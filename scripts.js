@@ -28,7 +28,17 @@ const populateTodos = () => {
             todoList.innerHTML = '';
             arrayOfTodos.forEach(todo => {
                 const li = document.createElement('li');
-                li.textContent = todo.title;
+                // li.textContent = todo.title;
+
+                const statusElement = document.createElement('span');
+                statusElement.classList.add(todo.completed ? 'checkmark' : 'x-mark');
+                statusElement.textContent = todo.completed ? '\u2714' : '\u2716';
+
+                const todoTextElement = document.createElement('span');
+                todoTextElement.textContent = todo.title;
+
+                li.appendChild(statusElement);
+                li.appendChild(todoTextElement);
                 todoList.appendChild(li);
             });
 

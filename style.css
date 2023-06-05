@@ -6,6 +6,16 @@ body {
   color: #646464;
 }
 
+.checkmark {
+  color: green;
+  margin-right: 5px;
+}
+
+.x-mark {
+  color: red;
+  margin-right: 5px;
+}
+
 .user-action {
   background-color: white;
   min-height: 20px;
