@@ -20,28 +20,24 @@
     <section class="user-action">
 
         <section class="fetching">
-            <button id="fetch-btn" onclick="logFetchTodos()">Fetch</button>
-            <button id="log-btn" onclick="logTodos()">Log</button>
+            <button id="fetch-btn" title="I fetch Todos" onclick="logFetchTodos()">Fetch</button>
+            <button id="log-btn" title="I log Todos" onclick="logTodos()">Log</button>
         </section>
         <section class="poppin">
-            <button id="populate-btn" onclick="populateTodos()" title="Click Me 1st!">Populate!</button>
+            <button id="populate-btn" onclick="populateTodos()" title="I populate ALL Todos!">Populate!</button>
         </section>
-
 
         <section class="filtering">
-
-            <button id="filter-btn" onclick="filterTodos()">Filter</button>
-
-
-            <input type="number" id="user-id-input" min="1" max="10" placeholder="Enter UserID (1-10)">
+            <input type="number" title="Choose a UserID" id="user-id-input" min="1" max="10" placeholder="Enter UserID (1-10)">
+            <button id="filter-btn" title="I filter by UserID" onclick="filterTodos()">Filter</button>
         </section>
+
         <section class="yesno">
-            <button id="completed-todos-btn" onclick="showCompletedTodos()" style="display: none;">Show
+            <button id="completed-todos-btn" title="I show completed Todos" onclick="showCompletedTodos()" style="display: none;">Show
                 Completed</button>
-            <button id="not-completed-todos-btn" onclick="showNotCompletedTodos()" style="display: none;">Not
+            <button id="not-completed-todos-btn" title="I show NOT completed Todos" onclick="showNotCompletedTodos()" style="display: none;">Not
                 Completed</button>
         </section>
-
 
     </section>
 

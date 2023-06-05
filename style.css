@@ -22,30 +22,29 @@ body {
 }
 
 
-#populate-btn:hover{
+#populate-btn:hover {
   border: 2px solid #888;
   background-color: #ddd;
-  font-size: 22px;
-}
-
-#fetch-btn,
-#filter-btn {
-  margin-right: 15%;
-}
-
-#log-btn,
-#user-id-input {
-  margin-left: 15%;
 }
 
 #user-id-input {
   width: 13.812%;
-  font-size: 23px;
+  font-size: 12px;
+  line-height: 29.5px;
   border-style: solid;
   border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-#completed-todos-btn, #not-completed-todos-btn {
+.filtering,
+.fetching {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#completed-todos-btn,
+#not-completed-todos-btn {
   width: fit-content;
   margin: 0 1px 1px 1px;
 }
@@ -80,27 +79,43 @@ li {
 }
 
 
-@media (max-width: 880px) {
-  button {
+@media (max-width: 1180px) {
+  #populate-btn {
     width: fit-content;
+    font-size: 20px;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .user-action {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    /* width: fit-content; */
   }
 
   #fetch-btn,
-  #filter-btn {
-    margin-right: 0%;
+  #user-id-input {
+    margin-right: 2px;
+    width: fit-content;
   }
 
   #log-btn,
-  #user-id-input {
-    margin-left: 0%;
+  #filter-btn {
+    margin-left: 2px;
+    width: fit-content;
+  }
+
+  .filtering,
+  .fetching {
+    display: flex;
+    justify-content: center;
+  }
+
+  #completed-todos-btn,
+  #not-completed-todos-btn {
+    width: fit-content;
+    font-size: 16px;
   }
 
   #completed-todos-btn {
