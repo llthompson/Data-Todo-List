@@ -42,8 +42,14 @@ const populateTodos = () => {
                 todoList.appendChild(li);
             });
 
+            const completedBtn = document.getElementById('completed-todos-btn');
+            const notCompletedBtn = document.getElementById('not-completed-todos-btn');
+            document.getElementById('completed-todos-btn').style.display = 'inline';
+            document.getElementById('not-completed-todos-btn').style.display = 'inline';
 
         });
+
+
 }
 
 const getUserID = () => {
@@ -73,10 +79,10 @@ const filterTodos = () => {
         li.appendChild(todoTextElement);
         todoList.appendChild(li);
     });
-    const completedBtn = document.getElementById('completed-todos-btn');
-    const notCompletedBtn = document.getElementById('not-completed-todos-btn');
-    completedBtn.style.display = filteredTodos.length > 0 ? 'inline' : 'none';
-    notCompletedBtn.style.display = filteredTodos.length > 0 ? 'inline' : 'none';
+    // const completedBtn = document.getElementById('completed-todos-btn');
+    // const notCompletedBtn = document.getElementById('not-completed-todos-btn');
+    // completedBtn.style.display = filteredTodos.length > 0 ? 'inline' : 'none';
+    // notCompletedBtn.style.display = filteredTodos.length > 0 ? 'inline' : 'none';
 }
 
 
